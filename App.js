@@ -13,6 +13,7 @@ import {
   Pressable,
   Modal,
   CloseIcon,
+  Heading,
 } from "native-base";
 import { StatusBar } from "react-native";
 
@@ -48,7 +49,13 @@ theme.components.Modal = {
   },
 };
 
-theme.components.ModalContent = {};
+theme.components.ModalContent = {
+  baseStyle: {
+    borderWidth: 2,
+    borderTopColor: "#F2F2F2",
+    borderLeftColor: "#F2F2F2",
+  },
+};
 
 theme.components.ModalCloseButton = {};
 theme.components.ModalHeader = {};
@@ -108,7 +115,7 @@ const RootWindow = () => {
         </Button>
       </HStack>
       <Modal
-        isOpen={showModal}
+        isOpen={true}
         onClose={() => setShowModal(false)}
         backdropVisible={false}
       >
@@ -124,7 +131,19 @@ const RootWindow = () => {
             />
           </HStack>
           <Modal.Body>
-            Sit nulla est ex deserunt exercitation anim occaecat. Nostrud
+            <VStack p={5}>
+              <Heading bold color="black" size="lg">
+                Welcome to Windows95
+              </Heading>
+              <HStack space={4}>
+                <Box h="400px" w="400px" borderWidth={1}>
+                  Banner here
+                </Box>
+                <Box>
+                  <Button px={4}>What's new?</Button>
+                </Box>
+              </HStack>
+            </VStack>
           </Modal.Body>
           <Modal.Footer>
             <Button.Group space={2}>
