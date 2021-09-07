@@ -1,4 +1,3 @@
-import { createIcon } from "native-base";
 import React from "react";
 import Svg, { Defs, Path, Pattern, Use, Image } from "react-native-svg";
 
@@ -33,7 +32,33 @@ export const StartIcon = (props) => {
 	);
 };
 
-export const MoonIcon = createIcon({
-	viewBox: "0 0 24 24",
-	d: "M21.4,13.7C20.6,13.9,19.8,14,19,14c-5,0-9-4-9-9c0-0.8,0.1-1.6,0.3-2.4c0.1-0.3,0-0.7-0.3-1 c-0.3-0.3-0.6-0.4-1-0.3C4.3,2.7,1,7.1,1,12c0,6.1,4.9,11,11,11c4.9,0,9.3-3.3,10.6-8.1c0.1-0.3,0-0.7-0.3-1 C22.1,13.7,21.7,13.6,21.4,13.7z",
-});
+export const Documents = (props) => {
+	return (
+		<Svg
+			width={32}
+			height={32}
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+			xmlnsXlink="http://www.w3.org/1999/xlink"
+			{...props}
+		>
+			<Path fill="url(#prefix__pattern0)" d="M0 0h32v32H0z" />
+			<Defs>
+				<Pattern
+					id="prefix__pattern0"
+					patternContentUnits="objectBoundingBox"
+					width={1}
+					height={1}
+				>
+					<Use xlinkHref="#prefix__image0" transform="scale(.03125)" />
+				</Pattern>
+				<Image
+					id="prefix__image0"
+					width={32}
+					height={32}
+					xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAQlBMVEUAAACGhoatqZBVVVX/+/DAwMBNTU2AgAD//5nMzGaZmQAAM5mgoKTn59YAMzPMzDMiIiIAAAD/zJkICAgzMwD///8JhSsRAAAAAXRSTlMAQObYZgAAAAFiS0dEFeXY+aMAAAAHdElNRQfiBhgXAzXpQrjsAAAA6ElEQVQ4y5WTgRZDMAxFmZa22ObN/3/rkqaVWrHt6XFw70lSjqb5N+03fuuuuTG2u+Zk9DUYJJEfGYPj+MRrg7j3PkQ+itF9CMqnXINblkLms5Qwt9774b4JD+VT7vJUY3ChnSmRx8V3ti+E1lLGSReFDBHCSdhgIZjjODaWKLgc8OIjXvpkFILbqyTM9iUC8kPntERVARmmO+qxNNsQBcrXCMuaBBSATjIpENa1rgDdC3wh6HhQBSJID+iM2kQF3YVWAA+RBGyvArsxw65FgolCtiGfO5TldROFgJNswmmS0Kxn+eVvfwOSuRzkl7Eh+AAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOC0wNi0yNFQyMzowMzo1My0wNDowMMlL3U8AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTgtMDYtMjRUMjM6MDM6NTMtMDQ6MDC4FmXzAAAAAElFTkSuQmCC"
+				/>
+			</Defs>
+		</Svg>
+	);
+};

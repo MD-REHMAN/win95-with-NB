@@ -1,21 +1,20 @@
 import React from "react";
-import { StartIcon } from "../icons";
+import { StartIcon, Documents } from "../icons";
 import {
 	Button,
 	Menu,
-	MoonIcon,
 	VStack,
 	Pressable,
 	useDisclose,
 	Divider,
 	Box,
+	Image,
 	Text,
-	ChevronRightIcon,
 	HStack,
 	theme,
 } from "native-base";
 
-export const StartMenuItem = ({ icon, text, ...props }) => {
+export const StartMenuItem = ({ icon, text, sideIcon, ...props }) => {
 	return (
 		<Pressable
 			px={1}
@@ -29,7 +28,7 @@ export const StartMenuItem = ({ icon, text, ...props }) => {
 		>
 			{({ isHovered, isFocused }) => (
 				<HStack
-					space={2}
+					space={20}
 					w="100%"
 					justifyContent="space-between"
 					alignItems="center"
@@ -38,11 +37,18 @@ export const StartMenuItem = ({ icon, text, ...props }) => {
 						{icon}
 						<Text color={(isHovered || isFocused) && "white"}>{text}</Text>
 					</HStack>
-					<ChevronRightIcon
+					{/* <ChevronRightIcon
 						size="xs"
 						ml={10}
 						color={(isHovered || isFocused) && "white"}
-					/>
+					/> */}
+					{sideIcon && (
+						<Box
+							border={3}
+							borderColor="transparent"
+							borderLeftColor={isHovered || isFocused ? "white" : "black"}
+						/>
+					)}
 				</HStack>
 			)}
 		</Pressable>
@@ -54,6 +60,8 @@ export const Start = () => {
 
 	return (
 		<Menu
+			offset={6}
+			crossOffset={-4}
 			isOpen={isOpen}
 			onClose={onToggle}
 			trigger={(triggerProps) => {
@@ -98,19 +106,46 @@ export const Start = () => {
 					</Text>
 				</Box>
 				<VStack bg="win95Main">
-					<StartMenuItem icon={<MoonIcon />} text="Programs" />
-					<StartMenuItem icon={<MoonIcon />} text="Documents" />
-					<StartMenuItem icon={<MoonIcon />} text="Settings" />
-					<StartMenuItem icon={<MoonIcon />} text="Find" />
-					<StartMenuItem icon={<MoonIcon />} text="Help" />
-					<StartMenuItem icon={<MoonIcon />} text="Run..." />
+					<StartMenuItem
+						icon={
+							<Image m={1} size={4} source={require("../icons/program.png")} />
+						}
+						text="Programs"
+						sideIcon
+					/>
+					<StartMenuItem
+						icon={<Image size={6} source={require("../icons/documents.png")} />}
+						text="Documents"
+						sideIcon
+					/>
+					<StartMenuItem
+						icon={<Image size={6} source={require("../icons/settings.png")} />}
+						text="Settings"
+						sideIcon
+					/>
+					<StartMenuItem
+						icon={<Image size={6} source={require("../icons/find.png")} />}
+						text="Find"
+						sideIcon
+					/>
+					<StartMenuItem
+						icon={<Image size={6} source={require("../icons/help.png")} />}
+						text="Help"
+					/>
+					<StartMenuItem
+						icon={<Image size={6} source={require("../icons/run.png")} />}
+						text="Run..."
+					/>
 					<Divider
 						borderWidth={1}
 						borderColor="transparent"
 						borderTopColor="#aaa"
 						borderBottomColor="#eee"
 					/>
-					<StartMenuItem icon={<MoonIcon />} text="Shut Down..." />
+					<StartMenuItem
+						icon={<Image size={6} source={require("../icons/shutdown.png")} />}
+						text="Shut Down..."
+					/>
 				</VStack>
 			</HStack>
 		</Menu>
