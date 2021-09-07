@@ -103,11 +103,12 @@ theme.colors = {
 
 const RootWindow = () => {
 	const [showModal, setShowModal] = React.useState(false);
+	const [showStart, setShowStart] = React.useState(false);
 
 	return (
 		<VStack bg="black" flex={1} safeArea>
 			<Box flex={1} bg="#018281">
-				<HStack>
+				<HStack position="absolute" bottom={0} opacity={showStart ? 1 : 0}>
 					<Box
 						zIndex={9}
 						alignItems="flex-start"
@@ -117,11 +118,8 @@ const RootWindow = () => {
 						position="relative"
 					>
 						<Text
-							// zIndex={8}
 							bottom={0}
-							// top={0}
 							left={0}
-							// right={0}
 							position="absolute"
 							fontSize="lg"
 							fontWeight={900}
@@ -156,6 +154,101 @@ const RootWindow = () => {
 								</HStack>
 							)}
 						</Pressable>
+						<Pressable
+							px={1}
+							py={2}
+							w="100%"
+							_hover={{ bg: "win95Title.0" }}
+							_pressed={{ bg: "win95Title.0" }}
+						>
+							{({ isHovered, isPressed }) => (
+								<HStack space={2} w="100%" alignItems="center">
+									<MoonIcon color="yellow.500" size="md" />
+									<Text color={isHovered && "white"}>Progrmams</Text>
+									<ChevronRightIcon
+										size="xs"
+										ml={10}
+										color={isHovered && "white"}
+									/>
+								</HStack>
+							)}
+						</Pressable>
+						<Pressable
+							px={1}
+							py={2}
+							w="100%"
+							_hover={{ bg: "win95Title.0" }}
+							_pressed={{ bg: "win95Title.0" }}
+						>
+							{({ isHovered, isPressed }) => (
+								<HStack space={2} w="100%" alignItems="center">
+									<MoonIcon color="yellow.500" size="md" />
+									<Text color={isHovered && "white"}>Progrmams</Text>
+									<ChevronRightIcon
+										size="xs"
+										ml={10}
+										color={isHovered && "white"}
+									/>
+								</HStack>
+							)}
+						</Pressable>
+						<Pressable
+							px={1}
+							py={2}
+							w="100%"
+							_hover={{ bg: "win95Title.0" }}
+							_pressed={{ bg: "win95Title.0" }}
+						>
+							{({ isHovered, isPressed }) => (
+								<HStack space={2} w="100%" alignItems="center">
+									<MoonIcon color="yellow.500" size="md" />
+									<Text color={isHovered && "white"}>Progrmams</Text>
+									<ChevronRightIcon
+										size="xs"
+										ml={10}
+										color={isHovered && "white"}
+									/>
+								</HStack>
+							)}
+						</Pressable>
+						<Pressable
+							px={1}
+							py={2}
+							w="100%"
+							_hover={{ bg: "win95Title.0" }}
+							_pressed={{ bg: "win95Title.0" }}
+						>
+							{({ isHovered, isPressed }) => (
+								<HStack space={2} w="100%" alignItems="center">
+									<MoonIcon color="yellow.500" size="md" />
+									<Text color={isHovered && "white"}>Progrmams</Text>
+									<ChevronRightIcon
+										size="xs"
+										ml={10}
+										color={isHovered && "white"}
+									/>
+								</HStack>
+							)}
+						</Pressable>
+						<Pressable
+							px={1}
+							py={2}
+							w="100%"
+							_hover={{ bg: "win95Title.0" }}
+							_pressed={{ bg: "win95Title.0" }}
+						>
+							{({ isHovered, isPressed }) => (
+								<HStack space={2} w="100%" alignItems="center">
+									<MoonIcon color="yellow.500" size="md" />
+									<Text color={isHovered && "white"}>Progrmams</Text>
+									<ChevronRightIcon
+										size="xs"
+										ml={10}
+										color={isHovered && "white"}
+									/>
+								</HStack>
+							)}
+						</Pressable>
 					</VStack>
 				</HStack>
 			</Box>
@@ -166,10 +259,21 @@ const RootWindow = () => {
 				p={1}
 				borderColor="#F2F2F2"
 			>
-				<Start />
+				<Start onPress={() => setShowStart(!showStart)} />
 				{/* <Button startIcon={<MoonIcon size="xs" />}> Start</Button> */}
 				{/* <Divider /> */}
-				<Button onPress={() => setShowModal(!showModal)} pr={8}>
+				<Button
+					onPress={() => setShowModal(!showModal)}
+					pr={8}
+					// {...(showModal && {
+					// 	bg: "#EEE",
+					// 	borderTopColor: "black",
+					// 	borderLeftColor: "black",
+					// 	borderBottomColor: "#F2F2F2",
+					// 	borderRightColor: "#F2F2F2",
+					// })}
+					{...(showModal && theme.components.Button.baseStyle._pressed)}
+				>
 					Welcome
 				</Button>
 			</HStack>

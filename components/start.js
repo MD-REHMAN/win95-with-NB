@@ -1,10 +1,10 @@
 import React from "react";
 import { Button, Menu, MoonIcon, Divider, useDisclose } from "native-base";
 
-export const Start = () => {
+export const Start = ({ onPress, props }) => {
 	const { isOpen, onToggle } = useDisclose();
 	return (
-		<Button onPress={onToggle} startIcon={<MoonIcon size="xs" />}>
+		<Button onPress={onPress ?? onToggle} startIcon={<MoonIcon size="xs" />}>
 			Start
 		</Button>
 	);
