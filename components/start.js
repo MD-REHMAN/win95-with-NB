@@ -67,10 +67,9 @@ export const Start = () => {
 			trigger={(triggerProps) => {
 				return (
 					<Button
-						_stack={{ space: 1 }}
 						startIcon={<StartIcon />}
-						{...triggerProps}
 						onPress={onToggle}
+						{...triggerProps}
 						{...(isOpen && theme.components.Button.baseStyle._pressed)}
 					>
 						Start
