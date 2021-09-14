@@ -25,8 +25,8 @@ theme.components.Modal = {
 theme.components.ModalContent = {
 	baseStyle: {
 		borderWidth: 2,
-		borderTopColor: "#F2F2F2",
-		borderLeftColor: "#F2F2F2",
+		borderTopColor: "lightBorder",
+		borderLeftColor: "lightBorder",
 	},
 };
 
@@ -95,7 +95,7 @@ const RootWindow = () => {
 				bg="#C3C3C3"
 				borderTopWidth={2}
 				p={1}
-				borderColor="#F2F2F2"
+				borderColor="lightBorder"
 			>
 				<Start />
 				{/* <Button startIcon={<MoonIcon size="xs" />}> Start</Button> */}
@@ -107,8 +107,8 @@ const RootWindow = () => {
 					// 	bg: "#EEE",
 					// 	borderTopColor: "black",
 					// 	borderLeftColor: "black",
-					// 	borderBottomColor: "#F2F2F2",
-					// 	borderRightColor: "#F2F2F2",
+					// 	borderBottomColor: "lightBorder",
+					// 	borderRightColor: "lightBorder",
 					// })}
 					{...(showModal && theme.components.Button.baseStyle._pressed)}
 				>
